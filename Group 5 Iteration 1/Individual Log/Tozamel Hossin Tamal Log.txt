@@ -1,0 +1,4 @@
+I have participated in iteration 1 of the group project and have completed my tasks:
+1. Data Dictionary
+2. Vision Document
+3. Use case description - Take a turn
