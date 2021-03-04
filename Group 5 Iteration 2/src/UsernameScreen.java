@@ -162,7 +162,6 @@ public class UsernameScreen extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(this, "Player 1 needs a username!");
                     hasEmpty = true;
                 }
-                JOptionPane.showMessageDialog(this, "User 1 needs a username!");
             }
             else if (gamePlayers == 2){
                 if ( Player1UsernameTextField.getText().equals("")) {
