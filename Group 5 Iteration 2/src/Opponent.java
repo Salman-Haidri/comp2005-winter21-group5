@@ -3,14 +3,12 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Opponent extends JFrame implements ActionListener{
-	
+	private int numPlayers;
 	private JPanel topPanel, bottomPanel;
 	private JLabel gameName;
 	private JButton comp, custom, back, quit;
 
 	public Opponent() {
-		// TODO Auto-generated method stub
-
 		this.setSize(800, 800);
 		
 		topPanel = new JPanel();
@@ -66,12 +64,35 @@ public class Opponent extends JFrame implements ActionListener{
 		{
 			//1 player vs computer
 			this.dispose();
-			UsernameScreen usernameScreen = new UsernameScreen();
+			UsernameScreen usernameScreen = new UsernameScreen(1);
 		}
 		else if(selected.equals(custom)) {
 			// Let player choose number of opponents
+			Object[] playerchoices = {"1 Player", "2 Players", "3 Players", "4 Players"};
+			ImageIcon imageIcon = new ImageIcon("Logo.png");
+			String selection = (String)JOptionPane.showInputDialog(
+					this,
+					"Choose the number of players",
+					"Player Selection",
+					JOptionPane.WARNING_MESSAGE,
+					imageIcon,
+					playerchoices,
+					playerchoices[0]
+			);
+			if (selection.equals(playerchoices[0])){
+				numPlayers = 1;
+			}
+			else if (selection.equals(playerchoices[1])){
+				numPlayers = 2;
+			}
+			else if (selection.equals(playerchoices[2])){
+				numPlayers = 3;
+			}
+			else if (selection.equals(playerchoices[3])){
+				numPlayers = 4;
+			}
 			this.dispose();
-			UsernameScreen usernameScreen = new UsernameScreen();
+			UsernameScreen usernameScreen = new UsernameScreen(numPlayers);
 		}
 		else if(selected.equals(back)) {
 			this.dispose();

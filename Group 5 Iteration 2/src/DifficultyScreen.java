@@ -9,10 +9,10 @@ public class DifficultyScreen extends JFrame implements ActionListener { // Impl
     private JRadioButton easy_RadioButton, hard_RadioButton;
     private ButtonGroup radioButtonGroup;
     private JButton nextButton, backButton;
+    private int gamePlayers;
 
-    public DifficultyScreen(){
+    public DifficultyScreen(int numPlayers){
         GridBagConstraints gc = new GridBagConstraints();
-
         // Panels and other gui elements created
         titlePanel = new JPanel();
         titlePanel.setLayout(new GridBagLayout());
@@ -97,7 +97,7 @@ public class DifficultyScreen extends JFrame implements ActionListener { // Impl
         }
         if (selected.equals(backButton)){
             dispose();
-            ThemeScreen themeScreen = new ThemeScreen();
+            ThemeScreen themeScreen = new ThemeScreen(gamePlayers);
         }
     }
 }

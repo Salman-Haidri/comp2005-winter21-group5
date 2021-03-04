@@ -8,8 +8,10 @@ public class ThemeScreen extends JFrame implements ActionListener {
     private JPanel titlePanel, themesPanel;
     private JComboBox themeComboBox;
     private JButton nextButton, backButton;
+    private int gamePlayers;
 
-    public ThemeScreen() {
+    public ThemeScreen(int numPlayers) {
+        gamePlayers = numPlayers;
         // Theme options for the combo box
         String[] themeOptions = {"R G B Y",
                 "<html>X O &#9651; &#9634;</html>",
@@ -83,11 +85,11 @@ public class ThemeScreen extends JFrame implements ActionListener {
         Object selected = e.getSource();
         if (selected.equals(nextButton)){
             dispose();
-            DifficultyScreen difficultyScreen = new DifficultyScreen();
+            DifficultyScreen difficultyScreen = new DifficultyScreen(gamePlayers);
         }
         if (selected.equals(backButton)){
             dispose();
-            UsernameScreen usernameScreen = new UsernameScreen();
+            UsernameScreen usernameScreen = new UsernameScreen(gamePlayers);
         }
     }
 }
