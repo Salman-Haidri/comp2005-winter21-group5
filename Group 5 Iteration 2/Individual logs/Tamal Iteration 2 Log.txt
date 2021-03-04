@@ -1,0 +1,3 @@
+I have participated in Iteration 2 of the group project and have completed my tasks:
+1. Use Case Description: Display Settings
+2. Sequence Diagram: Display Settings
