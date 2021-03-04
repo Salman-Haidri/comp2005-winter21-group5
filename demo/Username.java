@@ -59,10 +59,11 @@ public class Username extends JFrame implements ActionListener {
 
         submit = new JButton("Submit");
         submit.addActionListener(this);
-
+        submit.setPreferredSize(new Dimension(300, 50));
+        
         back = new JButton("Back");
         back.addActionListener(this);
-
+        back.setPreferredSize(new Dimension(300, 50));
         
         gbc.weighty = 1;
         bottomPanel.add(submit, gbc);

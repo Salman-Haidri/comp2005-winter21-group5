@@ -51,11 +51,12 @@ public class Theme extends JFrame implements ActionListener {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         
         btn = new JButton("Submit");
+        btn.setPreferredSize(new Dimension(300, 50));
         btn.addActionListener(this);
 
         back = new JButton("Back");
         back.addActionListener(this);
-
+        back.setPreferredSize(new Dimension(300, 50));
         
         gbc.weighty = 1;
         bottomPanel.add(btn, gbc);
