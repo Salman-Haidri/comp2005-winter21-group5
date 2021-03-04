@@ -22,17 +22,15 @@ public class Username extends JFrame implements ActionListener {
       // Submit
       
 
-      submit = new JButton("SUBMIT");
+      
       panel = new JPanel(new GridLayout(3, 1));
 
       topPanel = new JPanel(new FlowLayout());
-      bottomPanel = new JPanel(new GridLayout(3, 0));
+      bottomPanel = new JPanel();
 
-      topPanel.add(user_label);
-      topPanel.add(userName_text);
+      
 
-      GridBagConstraints gbc = new GridBagConstraints();
-      gbc.gridwidth = GridBagConstraints.REMAINDER;
+
 
       message = new JLabel("<html><h1><strong>Enter username</strong></h1><hr></html>");
       message.setHorizontalAlignment(SwingConstants.CENTER);
@@ -43,23 +41,48 @@ public class Username extends JFrame implements ActionListener {
       topPanel.setAlignmentY(SwingConstants.CENTER);
 
       Border b2 = new EmptyBorder(100, 100, 100, 100);
-    
-      back = new JButton("BACK");
-     back.setAlignmentX(Component.CENTER_ALIGNMENT); 
 
 
-      bottomPanel.add(submit, b2);
-      bottomPanel.add(back, b2);
+
+      bottomPanel = new JPanel();
+		bottomPanel.setLayout(new GridBagLayout());
+		GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.anchor = GridBagConstraints.NORTH;
+        
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        
+
+        topPanel.add(user_label, gbc);
+      topPanel.add(userName_text,gbc);
+
+        submit = new JButton("Submit");
+        submit.addActionListener(this);
+
+        back = new JButton("Back");
+        back.addActionListener(this);
+
+        
+        gbc.weighty = 1;
+        bottomPanel.add(submit, gbc);
+        bottomPanel.add(back, gbc);
+
+
+		getContentPane().setLayout(new BorderLayout());
+		
+    getContentPane().add(panel, BorderLayout.NORTH);
+    getContentPane().add(topPanel, BorderLayout.CENTER);
+    getContentPane().add(bottomPanel ,BorderLayout.SOUTH);
+		
+     
  
 
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       // Adding the listeners to components..
       submit.addActionListener(this);
       back.addActionListener(this);
-        
-      panel.add(topPanel);
-      panel.add(bottomPanel);
-      add(panel, BorderLayout.CENTER);
+    
      
       setTitle("Enter your username Here !");
       setVisible(true);

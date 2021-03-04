@@ -18,7 +18,7 @@ public class Theme extends JFrame implements ActionListener {
 
     panel = new JPanel(new GridLayout(3, 0));
       topPanel = new JPanel(new FlowLayout());
-      bottomPanel = new JPanel(new GridLayout(3, 0));
+      bottomPanel = new JPanel();
 
       
 
@@ -41,23 +41,34 @@ public class Theme extends JFrame implements ActionListener {
     cb.setAlignmentX(Component.CENTER_ALIGNMENT);
     
 
-     btn = new JButton("OK");
-    btn.setAlignmentX(Component.CENTER_ALIGNMENT); 
+    bottomPanel = new JPanel();
+		bottomPanel.setLayout(new GridBagLayout());
+		GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        gbc.anchor = GridBagConstraints.NORTH;
+        
+        gbc.anchor = GridBagConstraints.CENTER;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        
+        btn = new JButton("Submit");
+        btn.addActionListener(this);
 
-     back = new JButton("BACK");
-     back.setAlignmentX(Component.CENTER_ALIGNMENT); 
+        back = new JButton("Back");
+        back.addActionListener(this);
 
-    Border b2 = new EmptyBorder(100, 100, 100, 100);
-    bottomPanel.add(btn, b2);
-    bottomPanel.add(back, b2);
-  
-    back.addActionListener(this);
-    btn.addActionListener(this);
-    
-     panel.add(topPanel);
-     panel.add(cb,b2);
-     panel.add(bottomPanel);
-     add(panel);
+        
+        gbc.weighty = 1;
+        bottomPanel.add(btn, gbc);
+        bottomPanel.add(back, gbc);
+
+        panel.add(cb); 
+
+		getContentPane().setLayout(new BorderLayout());
+		getContentPane().add(topPanel, BorderLayout.NORTH);
+    getContentPane().add(bottomPanel, BorderLayout.SOUTH);
+    getContentPane().add(panel, BorderLayout.CENTER);
+		
+     
      
      
       setTitle("Enter your username Here !");
