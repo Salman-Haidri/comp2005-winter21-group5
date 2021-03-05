@@ -47,6 +47,7 @@ public class GameScreen extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object selected = e.getSource();
+        // quit button used to quit the game, a message is asked to confirm this
         if (selected==quitButton){
             int dialogButton = JOptionPane.YES_NO_OPTION;
             int n = JOptionPane.showConfirmDialog (null,

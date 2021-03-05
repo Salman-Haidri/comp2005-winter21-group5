@@ -10,7 +10,7 @@ public class Home_Page extends JFrame implements ActionListener{
 	private JButton newGame, cont_inue, help, quit;
 	
 	public Home_Page() {
-		
+		// adding gui elements after creating them including the frame
 		this.setSize(800, 800);
 		
 		topPanel = new JPanel();
@@ -86,7 +86,7 @@ public class Home_Page extends JFrame implements ActionListener{
 		}
 		
 	}
-	
+	// Help menu to provide help
 	private void displayHelp() {
 		JOptionPane.showMessageDialog(this, "Gameplay: \nFirst play may be determined by a die-roll or another manner of the players' choosing.\n\n"
 										+ "At the beginning of each turn, the active player rolls the die. That player selects one of her five pawns\n"

@@ -79,7 +79,7 @@ public class ThemeScreen extends JFrame implements ActionListener {
         setSize(800, 800);
     }
 
-    // Action event methods
+    // Action event methods move forwards or backwards
     @Override
     public void actionPerformed(ActionEvent e) {
         Object selected = e.getSource();

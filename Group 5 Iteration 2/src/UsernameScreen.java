@@ -31,6 +31,7 @@ public class UsernameScreen extends JFrame implements ActionListener {
         Player1UsernameTextField = new JTextField();
         Player1UsernameTextField.setPreferredSize(new Dimension(300, 50));
 
+        // Checking how many different usernames are required and creating the required number of text boxes for that
         if (numPlayers > 1) {
 
             player2Userame = new JLabel("<html><h2>Player 2 Username:</h2></html>");
@@ -86,6 +87,8 @@ public class UsernameScreen extends JFrame implements ActionListener {
         gc.anchor = GridBagConstraints.WEST;
         mainPanel.add(Player1UsernameTextField, gc);
 
+        // Getting the usernames based on how many players are there
+        // These lines create the text boxes for that and place them in the appropriate position on the screen
         if (numPlayers > 1){
             mainPanelycoord++;
             gc.gridx = 0;
@@ -156,6 +159,8 @@ public class UsernameScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object selected = e.getSource();
         boolean hasEmpty = false;
+        // After the next button is clicked there's a check for if every required user has entered the username
+        // If a user hasn't put in a username an error message is displayed and the user is made to enter a username
         if (selected.equals(nextButton)){
             if (gamePlayers == 1){
                 if ( Player1UsernameTextField.getText().equals("")) {
@@ -205,11 +210,13 @@ public class UsernameScreen extends JFrame implements ActionListener {
                     hasEmpty = true;
                 }
             }
+            // if there's no empty usernames then move forward to the next screen
             if (!hasEmpty) {
                 dispose();
                 ThemeScreen themeScreen = new ThemeScreen(gamePlayers);
             }
         }
+        // going back to the previous screen
         if (selected.equals(backButton)){
             dispose();
             Opponent opponent = new Opponent();

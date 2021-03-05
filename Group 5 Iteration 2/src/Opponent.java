@@ -10,7 +10,7 @@ public class Opponent extends JFrame implements ActionListener{
 
 	public Opponent() {
 		this.setSize(800, 800);
-		
+		// Setting up the elements and the frame, after creating them first
 		topPanel = new JPanel();
 		topPanel.setLayout(new GridBagLayout());
 		
@@ -79,20 +79,19 @@ public class Opponent extends JFrame implements ActionListener{
 					playerchoices,
 					playerchoices[0]
 			);
-			if (selection.equals(playerchoices[0])){
-				numPlayers = 1;
+			if (selection != null) {
+				if (selection.equals(playerchoices[0])) {
+					numPlayers = 1;
+				} else if (selection.equals(playerchoices[1])) {
+					numPlayers = 2;
+				} else if (selection.equals(playerchoices[2])) {
+					numPlayers = 3;
+				} else if (selection.equals(playerchoices[3])) {
+					numPlayers = 4;
+				}
+				this.dispose();
+				UsernameScreen usernameScreen = new UsernameScreen(numPlayers);
 			}
-			else if (selection.equals(playerchoices[1])){
-				numPlayers = 2;
-			}
-			else if (selection.equals(playerchoices[2])){
-				numPlayers = 3;
-			}
-			else if (selection.equals(playerchoices[3])){
-				numPlayers = 4;
-			}
-			this.dispose();
-			UsernameScreen usernameScreen = new UsernameScreen(numPlayers);
 		}
 		else if(selected.equals(back)) {
 			this.dispose();
