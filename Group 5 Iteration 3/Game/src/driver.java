@@ -1,6 +1,5 @@
 public class driver {
     public static void main(String[] args) {
-        //Home_Page home_page = new Home_Page();
-        GameWindow gameWindow = new GameWindow();
+        Home_Page home_page = new Home_Page();
     }
 }
