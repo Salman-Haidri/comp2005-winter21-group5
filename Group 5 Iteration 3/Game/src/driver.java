@@ -1,7 +1,6 @@
-import java.io.FileNotFoundException;
-
 public class driver {
     public static void main(String[] args) {
-        Home_Page home_page = new Home_Page();
+        //Home_Page home_page = new Home_Page();
+        GameWindow gameWindow = new GameWindow();
     }
 }

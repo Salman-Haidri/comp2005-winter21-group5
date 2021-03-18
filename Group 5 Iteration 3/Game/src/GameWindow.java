@@ -23,7 +23,7 @@ public class GameWindow extends JFrame implements ActionListener {
 
         // adding elements to the gui
 
-        topPanel = new GameScreen(17, 17);
+        topPanel = new GameScreen(17, 16);
         topPanel.setBackground(Color.orange);
         bottomPanel.add(saveButton, BorderLayout.WEST);
         bottomPanel.add(quitButton, BorderLayout.EAST);
