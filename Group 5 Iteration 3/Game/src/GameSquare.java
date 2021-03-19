@@ -54,7 +54,13 @@ public class GameSquare extends JButton {
         barricadeCoordinates.add(new int[]{11, 8});
         barricadeCoordinates.add(new int[]{11, 12});
         barricadeCoordinates.add(new int[]{11, 16});
-        findValidCoordinates(3, 5, 10, new int[]{-1, -1});
+        barricadeCoordinates.add(new int[]{3, 8});
+        barricadeCoordinates.add(new int[]{4, 8});
+        barricadeCoordinates.add(new int[]{5, 8});
+        barricadeCoordinates.add(new int[]{7, 6});
+        barricadeCoordinates.add(new int[]{7, 10});
+
+        findValidCoordinates(3, 3, 3, new int[]{-1, -1});
         for (int[] i : validmoves){
             System.out.println(String.valueOf(i[0]) + " " + String.valueOf(i[1]));
         }
@@ -186,18 +192,18 @@ public class GameSquare extends JButton {
         if (diceCount == 0) {
             validmoves.add(new int[]{yCoord, xCoord});
         } else {
-            if (isRealBox(Math.max(0, yCoord - 1), xCoord) && (yCoord-1 != previous[0]) && (yCoord != 0)) {
+            if (isRealBox(Math.max(0, yCoord - 1), xCoord) && (yCoord-1 != previous[0]) && (yCoord != 0) & !(isBarricade(yCoord, xCoord))) {
                 findvalid(diceCount - 1, yCoord - 1, xCoord, new int[]{yCoord, xCoord});
             }
-            if (isRealBox(Math.min(13, yCoord + 1), xCoord) && (yCoord+1 != previous[0]) && (yCoord != 13)) {
+            if (isRealBox(Math.min(13, yCoord + 1), xCoord) && (yCoord+1 != previous[0]) && (yCoord != 13) & !(isBarricade(yCoord, xCoord))) {
                 findvalid(diceCount - 1, yCoord + 1, xCoord, new int[]{yCoord, xCoord});
             }
 
-            if (isRealBox(yCoord, Math.max(0, xCoord-1)) && (xCoord-1 != previous[1]) && (xCoord != 0)) {
+            if (isRealBox(yCoord, Math.max(0, xCoord-1)) && (xCoord-1 != previous[1]) && (xCoord != 0) & !(isBarricade(yCoord, xCoord))) {
                 findvalid(diceCount - 1, yCoord, xCoord - 1, new int[]{yCoord, xCoord});
             }
 
-            if (isRealBox(yCoord, Math.min(16, xCoord + 1)) && (xCoord+1 != previous[1]) && (xCoord != 16)) {
+            if (isRealBox(yCoord, Math.min(16, xCoord + 1)) && (xCoord+1 != previous[1]) && (xCoord != 16) & !(isBarricade(yCoord, xCoord))) {
                 findvalid(diceCount - 1, yCoord, xCoord + 1, new int[]{yCoord, xCoord});
             }
         }
