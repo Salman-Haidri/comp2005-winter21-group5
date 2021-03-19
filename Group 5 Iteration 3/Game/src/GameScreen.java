@@ -24,6 +24,6 @@ public class GameScreen extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Clicked");
+        System.out.println("Square Selected");
     }
 }

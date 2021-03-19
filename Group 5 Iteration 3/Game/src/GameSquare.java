@@ -1,11 +1,8 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class GameSquare extends JButton {
@@ -13,21 +10,54 @@ public class GameSquare extends JButton {
     //Replace with piece and barricade classes when they are created
     private String piece, barricade;
 
-    public ArrayList<int[]> barricadeCoordinates;
+    public ArrayList<int[]> barricadeCoordinates, validmoves, redSquares, blueSquares, greenSquares, yellowSquares;
 
     public GameSquare(int yCoord, int xCoord) {
         super();
         this.xCoord = xCoord;
         this.yCoord = yCoord;
 
+        validmoves = new ArrayList<int[]>();
         barricadeCoordinates = new ArrayList<int[]>();
+        redSquares = new ArrayList<int[]>();
+        blueSquares = new ArrayList<int[]>();
+        greenSquares = new ArrayList<int[]>();
+        yellowSquares = new ArrayList<int[]>();
+
+        redSquares.add(new int[]{14, 1});
+        redSquares.add(new int[]{14, 2});
+        redSquares.add(new int[]{14, 3});
+        redSquares.add(new int[]{15, 1});
+        redSquares.add(new int[]{15, 3});
+
+        greenSquares.add(new int[]{14, 5});
+        greenSquares.add(new int[]{14, 6});
+        greenSquares.add(new int[]{14, 7});
+        greenSquares.add(new int[]{15, 5});
+        greenSquares.add(new int[]{15, 7});
+
+        blueSquares.add(new int[]{14, 9});
+        blueSquares.add(new int[]{14, 10});
+        blueSquares.add(new int[]{14, 11});
+        blueSquares.add(new int[]{15, 9});
+        blueSquares.add(new int[]{15, 11});
+
+        yellowSquares.add(new int[]{14, 13});
+        yellowSquares.add(new int[]{14, 14});
+        yellowSquares.add(new int[]{14, 15});
+        yellowSquares.add(new int[]{15, 13});
+        yellowSquares.add(new int[]{15, 15});
+
         barricadeCoordinates.add(new int[]{1, 8});
         barricadeCoordinates.add(new int[]{11, 0});
         barricadeCoordinates.add(new int[]{11, 4});
         barricadeCoordinates.add(new int[]{11, 8});
         barricadeCoordinates.add(new int[]{11, 12});
         barricadeCoordinates.add(new int[]{11, 16});
-
+        findValidCoordinates(3, 5, 10, new int[]{-1, -1});
+        for (int[] i : validmoves){
+            System.out.println(String.valueOf(i[0]) + " " + String.valueOf(i[1]));
+        }
 
         Icon icon_regular = new ImageIcon("RegularSquare.jpg");
         Icon icon_landing = new ImageIcon("landingsquare.jpg");
@@ -47,16 +77,16 @@ public class GameSquare extends JButton {
         if (isLandingSquare(yCoord, xCoord)) {
             this.setIcon(icon_landing);
         }
-        if (isRedStartSquare(yCoord, xCoord)){
+        if (isRedStartSquare()){
             this.setIcon(new ImageIcon("redpiece.jpg"));
         }
-        if (isGreenStartSquare(yCoord, xCoord)){
+        if (isGreenStartSquare()){
             this.setIcon(new ImageIcon("greenpiece.jpg"));
         }
-        if (isBlueStartSquare(yCoord, xCoord)){
+        if (isBlueStartSquare()){
             this.setIcon(new ImageIcon("bluepiece.jpg"));
         }
-        if (isYellowStartSquare(yCoord, xCoord)){
+        if (isYellowStartSquare()){
             this.setIcon(new ImageIcon("yellowpiece.jpg"));
         }
         if (isBarricade(yCoord, xCoord)){
@@ -101,7 +131,7 @@ public class GameSquare extends JButton {
         return squareBarriacade;
     }
 
-    private boolean isLandingSquare(int yCoord, int xCoord) {
+    public boolean isLandingSquare(int yCoord, int xCoord) {
         boolean landingSquare = false;
         if (yCoord == 13) {
             if ((xCoord == 2) || (xCoord == 6) || (xCoord == 10) || (xCoord == 14)) {
@@ -111,64 +141,76 @@ public class GameSquare extends JButton {
         return landingSquare;
     }
 
-    private boolean isRedStartSquare(int yCoord, int xCoord) {
-        boolean redStart = false;
-        if (yCoord == 14) {
-            if ((xCoord == 1) || (xCoord == 2) || (xCoord == 3)) {
-                redStart = true;
+    public boolean isRedStartSquare() {
+        boolean squareRed = false;
+        for (int[]x : redSquares){
+            if (x[0] == yCoord && x[1] == xCoord){
+                return true;
             }
         }
-        if (yCoord == 15) {
-            if ((xCoord == 1) || (xCoord == 3)) {
-                redStart = true;
-            }
-        }
-            return redStart;
+        return squareRed;
     }
 
-    private boolean isGreenStartSquare(int yCoord, int xCoord) {
-        boolean Start = false;
-        if (yCoord == 14) {
-            if ((xCoord == 5) || (xCoord == 6) || (xCoord == 7)) {
-                Start = true;
+    public boolean isGreenStartSquare() {
+        boolean squareGreen = false;
+        for (int[]x : greenSquares){
+            if (x[0] == yCoord && x[1] == xCoord){
+                return true;
             }
         }
-        if (yCoord == 15) {
-            if ((xCoord == 5) || (xCoord == 7)) {
-                Start = true;
-            }
-        }
-        return Start;
+        return squareGreen;
     }
 
 
-    private boolean isBlueStartSquare(int yCoord, int xCoord) {
-        boolean Start = false;
-        if (yCoord == 14) {
-            if ((xCoord == 9) || (xCoord == 10) || (xCoord == 11)) {
-                Start = true;
+    public boolean isBlueStartSquare() {
+        boolean squareBlue = false;
+        for (int[] x : blueSquares) {
+            if (x[0] == yCoord && x[1] == xCoord) {
+                return true;
             }
         }
-        if (yCoord == 15) {
-            if ((xCoord == 9) || (xCoord == 11)) {
-                Start = true;
-            }
-        }
-        return Start;
+        return squareBlue;
     }
 
-    private boolean isYellowStartSquare(int yCoord, int xCoord) {
-        boolean Start = false;
-        if (yCoord == 14) {
-            if ((xCoord == 13) || (xCoord == 14) || (xCoord == 15)) {
-                Start = true;
+    public boolean isYellowStartSquare() {
+        boolean squareYellow = false;
+        for (int[]x : yellowSquares){
+            if (x[0] == yCoord && x[1] == xCoord){
+                return true;
             }
         }
-        if (yCoord == 15) {
-            if ((xCoord == 13) || (xCoord == 15)) {
-                Start = true;
+        return squareYellow;
+    }
+
+    public void findvalid(int diceCount, int yCoord, int xCoord, int[] previous) {
+        if (diceCount == 0) {
+            validmoves.add(new int[]{yCoord, xCoord});
+        } else {
+            if (isRealBox(Math.max(0, yCoord - 1), xCoord) && (yCoord-1 != previous[0]) && (yCoord != 0)) {
+                findvalid(diceCount - 1, yCoord - 1, xCoord, new int[]{yCoord, xCoord});
+            }
+            if (isRealBox(Math.min(13, yCoord + 1), xCoord) && (yCoord+1 != previous[0]) && (yCoord != 13)) {
+                findvalid(diceCount - 1, yCoord + 1, xCoord, new int[]{yCoord, xCoord});
+            }
+
+            if (isRealBox(yCoord, Math.max(0, xCoord-1)) && (xCoord-1 != previous[1]) && (xCoord != 0)) {
+                findvalid(diceCount - 1, yCoord, xCoord - 1, new int[]{yCoord, xCoord});
+            }
+
+            if (isRealBox(yCoord, Math.min(16, xCoord + 1)) && (xCoord+1 != previous[1]) && (xCoord != 16)) {
+                findvalid(diceCount - 1, yCoord, xCoord + 1, new int[]{yCoord, xCoord});
             }
         }
-        return Start;
+    }
+
+    public void findValidCoordinates(int diceCount, int yCoord, int xCoord, int[]previous){
+        validmoves.removeAll(validmoves);
+        findvalid(diceCount, yCoord, xCoord, previous);
+    }
+
+    public void setnewRedCoordinate(int oldy, int oldx, int newy, int newx){
+        redSquares.remove(new int[]{oldx, oldy});
+        redSquares.add(new int[]{newy, newx});
+        System.out.println("Coordinates Changed");
     }
 }
