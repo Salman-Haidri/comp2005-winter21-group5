@@ -194,15 +194,15 @@ public class GameScreen extends JPanel implements ActionListener {
                     if (turn == 1) {
                         if (((GameSquare) source).isGreenStartSquare()) {
                             if (!((GameSquare) source).isGreenValidMoves(14, 5)){
-                                gameSquares[14][3].setIcon(new ImageIcon("greenpiece.jpg"));
-                            }else if (!((GameSquare) source).isGreenValidMoves(14, 6)){
-                                gameSquares[14][4].setIcon(new ImageIcon("greenpiece.jpg"));
-                            }else if (!((GameSquare) source).isGreenValidMoves(14, 7)){
                                 gameSquares[14][5].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(14, 6)){
+                                gameSquares[14][6].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(14, 7)){
+                                gameSquares[14][7].setIcon(new ImageIcon("greenpiece.jpg"));
                             }else if (!((GameSquare) source).isGreenValidMoves(15, 5)){
-                                gameSquares[15][3].setIcon(new ImageIcon("greenpiece.jpg"));
-                            }else if (!((GameSquare) source).isGreenValidMoves(15, 7)){
                                 gameSquares[15][5].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(15, 7)){
+                                gameSquares[15][7].setIcon(new ImageIcon("greenpiece.jpg"));
                             }
                         }
                         if (((GameSquare) source).isBlueStartSquare()) {
@@ -310,15 +310,15 @@ public class GameScreen extends JPanel implements ActionListener {
                         }
                         if (((GameSquare) source).isGreenStartSquare()) {
                             if (!((GameSquare) source).isGreenValidMoves(14, 5)){
-                                gameSquares[14][3].setIcon(new ImageIcon("greenpiece.jpg"));
-                            }else if (!((GameSquare) source).isGreenValidMoves(14, 6)){
-                                gameSquares[14][4].setIcon(new ImageIcon("greenpiece.jpg"));
-                            }else if (!((GameSquare) source).isGreenValidMoves(14, 7)){
                                 gameSquares[14][5].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(14, 6)){
+                                gameSquares[14][6].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(14, 7)){
+                                gameSquares[14][7].setIcon(new ImageIcon("greenpiece.jpg"));
                             }else if (!((GameSquare) source).isGreenValidMoves(15, 5)){
-                                gameSquares[15][3].setIcon(new ImageIcon("greenpiece.jpg"));
-                            }else if (!((GameSquare) source).isGreenValidMoves(15, 7)){
                                 gameSquares[15][5].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(15, 7)){
+                                gameSquares[15][7].setIcon(new ImageIcon("greenpiece.jpg"));
                             }
                         }
                         if (((GameSquare) source).isYellowStartSquare()) {
@@ -360,15 +360,15 @@ public class GameScreen extends JPanel implements ActionListener {
                         }
                         if (((GameSquare) source).isGreenStartSquare()) {
                             if (!((GameSquare) source).isGreenValidMoves(14, 5)){
-                                gameSquares[14][3].setIcon(new ImageIcon("greenpiece.jpg"));
-                            }else if (!((GameSquare) source).isGreenValidMoves(14, 6)){
-                                gameSquares[14][4].setIcon(new ImageIcon("greenpiece.jpg"));
-                            }else if (!((GameSquare) source).isGreenValidMoves(14, 7)){
                                 gameSquares[14][5].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(14, 6)){
+                                gameSquares[14][6].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(14, 7)){
+                                gameSquares[14][7].setIcon(new ImageIcon("greenpiece.jpg"));
                             }else if (!((GameSquare) source).isGreenValidMoves(15, 5)){
-                                gameSquares[15][3].setIcon(new ImageIcon("greenpiece.jpg"));
-                            }else if (!((GameSquare) source).isGreenValidMoves(15, 7)){
                                 gameSquares[15][5].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(15, 7)){
+                                gameSquares[15][7].setIcon(new ImageIcon("greenpiece.jpg"));
                             }
                         }
                         if (((GameSquare) source).isBlueStartSquare()) {
