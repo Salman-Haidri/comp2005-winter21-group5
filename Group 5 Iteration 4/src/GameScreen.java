@@ -193,16 +193,16 @@ public class GameScreen extends JPanel implements ActionListener {
                     // Moves the piece and moves any existing pieces in the current location of the piece into their original location
                     if (turn == 1) {
                         if (((GameSquare) source).isGreenStartSquare()) {
-                            if (!((GameSquare) source).isRedValidMoves(14, 3)){
-                                gameSquares[14][3].setIcon(new ImageIcon("redpiece.jpg"));
-                            }else if (!((GameSquare) source).isRedValidMoves(14, 4)){
-                                gameSquares[14][4].setIcon(new ImageIcon("redpiece.jpg"));
-                            }else if (!((GameSquare) source).isRedValidMoves(14, 5)){
-                                gameSquares[14][5].setIcon(new ImageIcon("redpiece.jpg"));
-                            }else if (!((GameSquare) source).isRedValidMoves(15, 3)){
-                                gameSquares[15][3].setIcon(new ImageIcon("redpiece.jpg"));
-                            }else if (!((GameSquare) source).isRedValidMoves(15, 5)){
-                                gameSquares[15][5].setIcon(new ImageIcon("redpiece.jpg"));
+                            if (!((GameSquare) source).isGreenValidMoves(14, 5)){
+                                gameSquares[14][3].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(14, 6)){
+                                gameSquares[14][4].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(14, 7)){
+                                gameSquares[14][5].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(15, 5)){
+                                gameSquares[15][3].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(15, 7)){
+                                gameSquares[15][5].setIcon(new ImageIcon("greenpiece.jpg"));
                             }
                         }
                         if (((GameSquare) source).isBlueStartSquare()) {
@@ -221,15 +221,15 @@ public class GameScreen extends JPanel implements ActionListener {
 
                         if (((GameSquare) source).isYellowStartSquare()) {
                             if (!((GameSquare) source).isYellowValidMoves(14, 13)){
-                                gameSquares[14][13].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[14][13].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }else if (!((GameSquare) source).isYellowValidMoves(14, 14)){
-                                gameSquares[14][14].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[14][14].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }else if (!((GameSquare) source).isYellowValidMoves(14, 15)){
-                                gameSquares[14][15].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[14][15].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }else if (!((GameSquare) source).isYellowValidMoves(15, 13)){
-                                gameSquares[15][13].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[15][13].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }else if (!((GameSquare) source).isYellowValidMoves(15, 15)){
-                                gameSquares[15][15].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[15][15].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }
                         }
                         ((GameSquare) source).setnewRedCoordinate(oldy, oldx);
@@ -273,15 +273,15 @@ public class GameScreen extends JPanel implements ActionListener {
 
                         if (((GameSquare) source).isYellowStartSquare()) {
                             if (!((GameSquare) source).isYellowValidMoves(14, 13)){
-                                gameSquares[14][13].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[14][13].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }else if (!((GameSquare) source).isYellowValidMoves(14, 14)){
-                                gameSquares[14][14].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[14][14].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }else if (!((GameSquare) source).isYellowValidMoves(14, 15)){
-                                gameSquares[14][15].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[14][15].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }else if (!((GameSquare) source).isYellowValidMoves(15, 13)){
-                                gameSquares[15][13].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[15][13].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }else if (!((GameSquare) source).isYellowValidMoves(15, 15)){
-                                gameSquares[15][15].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[15][15].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }
                         }
                         ((GameSquare) source).setnewGreenCoordinate(oldy, oldx);
@@ -309,29 +309,29 @@ public class GameScreen extends JPanel implements ActionListener {
                             }
                         }
                         if (((GameSquare) source).isGreenStartSquare()) {
-                            if (!((GameSquare) source).isRedValidMoves(14, 3)){
-                                gameSquares[14][3].setIcon(new ImageIcon("redpiece.jpg"));
-                            }else if (!((GameSquare) source).isRedValidMoves(14, 4)){
-                                gameSquares[14][4].setIcon(new ImageIcon("redpiece.jpg"));
-                            }else if (!((GameSquare) source).isRedValidMoves(14, 5)){
-                                gameSquares[14][5].setIcon(new ImageIcon("redpiece.jpg"));
-                            }else if (!((GameSquare) source).isRedValidMoves(15, 3)){
-                                gameSquares[15][3].setIcon(new ImageIcon("redpiece.jpg"));
-                            }else if (!((GameSquare) source).isRedValidMoves(15, 5)){
-                                gameSquares[15][5].setIcon(new ImageIcon("redpiece.jpg"));
+                            if (!((GameSquare) source).isGreenValidMoves(14, 5)){
+                                gameSquares[14][3].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(14, 6)){
+                                gameSquares[14][4].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(14, 7)){
+                                gameSquares[14][5].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(15, 5)){
+                                gameSquares[15][3].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(15, 7)){
+                                gameSquares[15][5].setIcon(new ImageIcon("greenpiece.jpg"));
                             }
                         }
                         if (((GameSquare) source).isYellowStartSquare()) {
                             if (!((GameSquare) source).isYellowValidMoves(14, 13)){
-                                gameSquares[14][13].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[14][13].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }else if (!((GameSquare) source).isYellowValidMoves(14, 14)){
-                                gameSquares[14][14].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[14][14].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }else if (!((GameSquare) source).isYellowValidMoves(14, 15)){
-                                gameSquares[14][15].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[14][15].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }else if (!((GameSquare) source).isYellowValidMoves(15, 13)){
-                                gameSquares[15][13].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[15][13].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }else if (!((GameSquare) source).isYellowValidMoves(15, 15)){
-                                gameSquares[15][15].setIcon(new ImageIcon("bluepiece.jpg"));
+                                gameSquares[15][15].setIcon(new ImageIcon("yellowpiece.jpg"));
                             }
                         }
                         ((GameSquare) source).setnewBlueCoordinate(oldy, oldx);
@@ -359,16 +359,16 @@ public class GameScreen extends JPanel implements ActionListener {
                             }
                         }
                         if (((GameSquare) source).isGreenStartSquare()) {
-                            if (!((GameSquare) source).isRedValidMoves(14, 3)){
-                                gameSquares[14][3].setIcon(new ImageIcon("redpiece.jpg"));
-                            }else if (!((GameSquare) source).isRedValidMoves(14, 4)){
-                                gameSquares[14][4].setIcon(new ImageIcon("redpiece.jpg"));
-                            }else if (!((GameSquare) source).isRedValidMoves(14, 5)){
-                                gameSquares[14][5].setIcon(new ImageIcon("redpiece.jpg"));
-                            }else if (!((GameSquare) source).isRedValidMoves(15, 3)){
-                                gameSquares[15][3].setIcon(new ImageIcon("redpiece.jpg"));
-                            }else if (!((GameSquare) source).isRedValidMoves(15, 5)){
-                                gameSquares[15][5].setIcon(new ImageIcon("redpiece.jpg"));
+                            if (!((GameSquare) source).isGreenValidMoves(14, 5)){
+                                gameSquares[14][3].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(14, 6)){
+                                gameSquares[14][4].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(14, 7)){
+                                gameSquares[14][5].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(15, 5)){
+                                gameSquares[15][3].setIcon(new ImageIcon("greenpiece.jpg"));
+                            }else if (!((GameSquare) source).isGreenValidMoves(15, 7)){
+                                gameSquares[15][5].setIcon(new ImageIcon("greenpiece.jpg"));
                             }
                         }
                         if (((GameSquare) source).isBlueStartSquare()) {
